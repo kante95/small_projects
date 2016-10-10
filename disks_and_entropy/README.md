@@ -1,0 +1,1 @@
+In this small project I try to demostrate with a simulation how the entropy influences the system. In particular I want to show that the entropy of system, with many small disks, except for two big ones, will cause the two big disk to stay close to each other.
