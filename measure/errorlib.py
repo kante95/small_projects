@@ -59,3 +59,14 @@ class measure():
 
     def comes_without_error(self):
         self.value = self.num_values[0]
+
+    def __add__(self,other):
+    	if self.unit_meas != other.unit_meas:
+    		raise NameError('Error: summing object with different units of measurement')
+    	if len(self.num_values) == 2 and len(other.num_values) == 2:
+    		sum_value = self.value + other.value
+    		sum_error = sqrt(self.error**2 + other.error**2)
+    		return measure(self.name + ' + '+other.name,[sum_value,sum_error], self.unit_meas)
+    	else:
+    		sum_value = self.value + other.value
+    		return measure(self.name + ' + '+other.name,sum_value, self.unit_meas)
